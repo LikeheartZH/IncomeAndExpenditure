@@ -13,9 +13,10 @@ namespace IncomeAndExpenditureWebAPI_CW.Common
     /// </summary>
     public class MonitorFile
     {
+        #region 监控配置文件
         /// <summary>
         /// 监控配置文件  
-        /// 配置文件修改后，重新读取配置
+        /// 配置文件修改后，从磁盘重新读取配置
         /// </summary>
         /// <param name="path">配置文件所在路径</param>
         /// <param name="settings">配置文件节点</param>
@@ -36,6 +37,6 @@ namespace IncomeAndExpenditureWebAPI_CW.Common
             };
             fsWatcher.EnableRaisingEvents = true;
         }
-
+        #endregion
     }
 }

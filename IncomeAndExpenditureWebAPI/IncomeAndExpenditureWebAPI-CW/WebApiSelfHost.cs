@@ -8,10 +8,17 @@ using System.Web.Http.SelfHost;
 
 namespace IncomeAndExpenditureWebAPI_CW
 {
+    /// <summary>
+    /// WebApi
+    /// </summary>
     public static class WebApiSelfHost
     {
         private static HttpSelfHostServer server;
 
+        #region 开启WebApi监听服务
+        /// <summary>
+        /// 开启WebApi监听服务
+        /// </summary>
         public static void Start()
         {
             string baseAddress = "http://localhost:8080";
@@ -25,7 +32,12 @@ namespace IncomeAndExpenditureWebAPI_CW
             server.OpenAsync().Wait(); //开启来自客户端的请求
             Console.WriteLine("开启Http监听");
         }
+        #endregion
 
+        #region 关闭WebApi监听
+        /// <summary>
+        /// 关闭WebApi监听
+        /// </summary>
         public static void Stop()
         {
             if (server != null)
@@ -35,5 +47,6 @@ namespace IncomeAndExpenditureWebAPI_CW
                 Console.WriteLine("关闭Http监听");
             }
         }
+        #endregion
     }
 }

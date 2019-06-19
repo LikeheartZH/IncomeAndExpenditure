@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace IncomeAndExpenditureModel
 {
+    /// <summary>
+    /// 响应Model基类
+    /// </summary>
     public class BaseResponseModel
     {
         /// <summary>

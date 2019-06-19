@@ -11,7 +11,7 @@ namespace IncomeAndExpenditureModel
     /// 
     /// </summary>
     [Description("银行")]
-    public class BankModel
+    public class BankModel : BaseResponseModel
     {
         /// <summary>
         /// 银行ID

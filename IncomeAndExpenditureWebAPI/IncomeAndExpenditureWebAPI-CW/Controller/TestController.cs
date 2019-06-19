@@ -1,10 +1,12 @@
 ﻿using IncomeAndExpenditureModel;
+using IncomeAndExpenditureWebAPI_CW.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using static IncomeAndExpenditureWebAPI_CW.Common.EnumUtil;
 
 namespace IncomeAndExpenditureWebAPI_CW.Controller
 {
@@ -25,9 +27,18 @@ namespace IncomeAndExpenditureWebAPI_CW.Controller
             return "your name is Bob？";
         }
 
-        public string GetVersion()
+        [HttpGet]
+        public BaseResponseModel GetVersion()
         {
-            return new BaseResponseModel().Version;
+            return new CommonHelper().Run(() =>
+             {
+                 return new BaseResponseModel()
+                 {
+                     ErrorCode = (int)ErrorCode.Success,
+                     ErrorMsg = CommonHelper.GetDescription(ErrorCode.Success),
+                 };
+             }, "GetVersion");
         }
+
     }
 }
