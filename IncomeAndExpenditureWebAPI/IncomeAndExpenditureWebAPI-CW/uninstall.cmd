@@ -1,0 +1,2 @@
+net stop HostService
+IncomeAndExpenditureWebAPI-CW.exe uninstall
